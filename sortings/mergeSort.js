@@ -3,12 +3,12 @@
  * @params {array} - array of length n
  * @params {number} - left - leftmost index of the array
  * @params {number} - right - rightmost index of the array
- * @params {number} - pivot - middle element of the array
+ * @params {number} - middle - middle element of the array
  */
 
-function merge(array, left, right, pivot) {
-  const leftArrayLength = pivot - left + 1;
-  const rightArrayLength = right - pivot;
+function merge(array, left, right, middle) {
+  const leftArrayLength = middle - left + 1;
+  const rightArrayLength = right - middle;
   const leftArray = [];
   const rightArray = [];
 
@@ -60,10 +60,10 @@ function mergeSort(array, left, right) {
   if (left >= right) {
     return;
   }
-  let pivot = parseInt((left + right) / 2, 10);
-  mergeSort(array, left, pivot);
-  mergeSort(array, pivot + 1, right);
-  merge(array, left, right, pivot);
+  let middle = parseInt((left + right) / 2, 10);
+  mergeSort(array, left, middle);
+  mergeSort(array, middle + 1, right);
+  merge(array, left, right, middle);
 }
 
 const array = [25, 17, 31, 13, 2];
