@@ -64,5 +64,3 @@ function quickSort(array, left, right) {
 const items = [3, 1, 2];
 
 quickSort(items, 0, items.length - 1);
-
-console.log("sorted Array -->", items);
