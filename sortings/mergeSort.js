@@ -29,7 +29,7 @@ function merge(array, leftArray, rightArray) {
     k++;
   }
 
-  // Copy the remaining elements of right arrat
+  // Copy the remaining elements of right array
   while (j < rightArray.length) {
     array[k] = rightArray[j];
     j++;
