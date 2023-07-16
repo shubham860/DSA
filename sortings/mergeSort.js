@@ -6,24 +6,12 @@
  * @params {number} - middle - middle element of the array
  */
 
-function merge(array, left, right, middle) {
-  const leftArrayLength = middle - left + 1;
-  const rightArrayLength = right - middle;
-  const leftArray = [];
-  const rightArray = [];
-
-  for (let i = 0; i < leftArrayLength; i++) {
-    leftArray[i] = array[i];
-  }
-  for (let j = 0; j < rightArrayLength; j++) {
-    rightArray[j] = array[j];
-  }
-
+function merge(array, leftArray, rightArray) {
   let i = 0,
     j = 0,
-    k = left;
+    k = 0;
 
-  while (i < leftArrayLength && j < rightArrayLength) {
+  while (i < leftArray.length && j < rightArray.length) {
     if (leftArray[i] <= rightArray[j]) {
       array[k] = leftArray[i];
       i++;
@@ -35,14 +23,14 @@ function merge(array, left, right, middle) {
   }
 
   // Copy the remaining elements of left array
-  while (i < leftArrayLength) {
+  while (i < leftArray.length) {
     array[k] = leftArray[i];
     i++;
     k++;
   }
 
   // Copy the remaining elements of right arrat
-  while (j < rightArrayLength) {
+  while (j < rightArray.length) {
     array[k] = rightArray[j];
     j++;
     k++;
@@ -56,17 +44,24 @@ function merge(array, left, right, middle) {
  * @params right - right index of array;
  */
 
-function mergeSort(array, left, right) {
+function mergeSort(array) {
+  let left = 0,
+    right = array.length - 1;
+
   if (left >= right) {
-    return;
+    return array;
   }
-  let middle = parseInt((left + right) / 2, 10);
-  mergeSort(array, left, middle);
-  mergeSort(array, middle + 1, right);
-  merge(array, left, right, middle);
+
+  let middle = Math.floor((left + right) / 2);
+
+  const leftArray = mergeSort(array.slice(left, middle + 1)); // Sort the left half
+  const rightArray = mergeSort(array.slice(middle + 1, right + 1)); // Sort the right half
+  merge(array, leftArray, rightArray); // Merge the two sorted halves
+
+  return array; // Return the sorted array
 }
 
 const array = [25, 17, 31, 13, 2];
-mergeSort(array, 0, 5);
+mergeSort(array);
 
 console.log("sorted Array ->", array);
