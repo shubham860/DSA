@@ -1,10 +1,7 @@
 /**
- * Insertion Sort Algorithm
+ * Insertion Sort Algorithm Implementation
  * @param {Array} arr
  */
-
-// Input -> [25,17, 31, 13, 2]
-// Output -> [2, 13, 17, 25, 31]
 
 function insertionSort(arr) {
     const n = arr.length;
