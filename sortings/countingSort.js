@@ -26,16 +26,12 @@ function countingSort(array) {
     for (let i = 0; i < array.length; i++) {
         count[array[i] - min]++;
     }
-
-    console.log('count 2', count)
     
     // store count[i] = count[i] + count[i-1]
     for(let i = 1; i < count.length; i++) {
         count[i] += count[i - 1];
-    }
+    } 
 
-    console.log('count', count)
-    
     // store number occurrence of each element in array
     for (let i = array.length - 1; i >= 0; i--) {
         output[--count[array[i]-min]] = array[i];
