@@ -1,5 +1,5 @@
 /**
- * merge
+ * mergeSort Algorithm Implementation
  * @params {array} - array of length n
  * @params {number} - left - leftmost index of the array
  * @params {number} - right - rightmost index of the array
