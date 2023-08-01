@@ -18,6 +18,7 @@ function bubbleSort(array) {
         for (let j = 0; j < arrayLength - i - 1; j++) {
             if (array[j] > array[j + 1]) {
                 swapping(array, j, j + 1);
+                swapped = true;
             }
         }
         if (!swapped) {
