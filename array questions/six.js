@@ -1,6 +1,6 @@
 // Find Maximum value of abs(i – j) * min(arr[i], arr[j]) in an array arr[]
 
-function maxAbsoluteDifference(array) {
+function maxProduct(array) {
     let maxProduct = 0;
     let currentProduct = 0;
     let i=0; j=array.length-1;
@@ -17,6 +17,6 @@ function maxAbsoluteDifference(array) {
     return maxProduct;
 }
  
-console.log(maxAbsoluteDifference([8, 1, 9, 4])); // Expected Output: 16
-console.log(maxAbsoluteDifference([3, 2, 1, 4])); // Expected Output: 6
-console.log(maxAbsoluteDifference([5, 5, 5, 5])); // Expected Output: 15
+console.log(maxProduct([8, 1, 9, 4])); // Expected Output: 16
+console.log(maxProduct([3, 2, 1, 4])); // Expected Output: 6
+console.log(maxProduct([5, 5, 5, 5])); // Expected Output: 15
