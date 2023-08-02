@@ -29,7 +29,7 @@ function maximumTripletSum(array) {
     return maximumSum;
 }
 
-console.log(maximumTripletSum([2, 5, 3, 1, 4, 9]))
+console.log(maximumTripletSum([2, 5, 3, 1, 4, 9]))  // Expected output: 14 (1 + 4 + 9)
 console.log(maximumTripletSum([1, 2, 3, 4, 5, 6])); // Expected output: 15 (4 + 5 + 6)
 console.log(maximumTripletSum([1, 2, 3])); // Expected output: 6 (1 + 2 + 3)
 console.log(maximumTripletSum([100, 200, 300, 400, 500, 600])); // Expected output: 1500 (400 + 500 + 600)
