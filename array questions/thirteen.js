@@ -7,10 +7,10 @@
 // Note that you cannot sell a stock before you buy one
 
 function maxProfit(priceArray) {
-    let minPrice = Number.MAX_SAFE_INTEGER;
+    let minPrice = Infinity;
     let maxProfit = 0;
 
-    for(let i in priceArray) {
+    for(let i of priceArray) {
         if(i < minPrice) {
             minPrice = i;
         }else if(i - minPrice > maxProfit) {
@@ -21,3 +21,4 @@ function maxProfit(priceArray) {
 }
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+console.log(maxProfit([7,6,4,3,1]))
